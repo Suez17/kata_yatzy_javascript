@@ -3,8 +3,11 @@ var Yatzy = require("../lib/yatzy");
 
 
 describe('Chance', function() {
-    it('scores sum of all dice', function(){
+    it('scores 15', function(){
         assert.equal(15, Yatzy.chance(2, 3, 4, 5, 1));
+    });
+
+    it('scores 16', function(){
         assert.equal(16, Yatzy.chance(3, 3, 4, 5, 1));
     });
 });
