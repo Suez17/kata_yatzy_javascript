@@ -181,10 +181,24 @@ describe("Three of a kind", function() {
 });
 
 describe("Four of a kind", function() {
-    it("scores the sum of the four of the kind", function() {
-        assert.equal(12, Yatzy.four_of_a_kind(3,3,3,3,5));
-        assert.equal(20, Yatzy.four_of_a_kind(5,5,5,4,5));
-        assert.equal(9, Yatzy.threeOfAKind(3,3,3,3,3));
+    it("scores 12", function() {
+        assert.equal(12, Yatzy.fourOfAKind(3,3,3,3,5));
+    });
+
+    it("scores 20", function() {
+        assert.equal(20, Yatzy.fourOfAKind(5,5,5,4,5));
+    });
+
+    it("scores 12 when five of a kind", function() {
+        assert.equal(12, Yatzy.fourOfAKind(3,3,3,3,3));
+    });
+
+    it("scores 0 when full house", function() {
+        assert.equal(0, Yatzy.fourOfAKind(3,3,3,5,5));
+    });
+
+    it("scores 0 when three of a kind", function() {
+        assert.equal(0, Yatzy.fourOfAKind(3,3,3,4,5));
     });
 });
 
