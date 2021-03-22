@@ -123,10 +123,20 @@ describe("Sixes", function() {
 });
 
 describe("One pair", function() {
-    it("scores the sum of the highest pair", function() {
-        assert.equal(6, Yatzy.score_pair(3,4,3,5,6));
-        assert.equal(10, Yatzy.score_pair(5,3,3,3,5));
-        assert.equal(12, Yatzy.score_pair(5,3,6,6,5));
+    it("scores 6", function() {
+        assert.equal(6, Yatzy.pair(3,4,3,5,6));
+    });
+
+    it("scores 10", function() {
+        assert.equal(10, Yatzy.pair(5,3,3,3,5));
+    });
+
+    it("scores 12", function() {
+        assert.equal(12, Yatzy.pair(5,3,6,6,5));
+    });
+
+    it("scores 0", function() {
+        assert.equal(0, Yatzy.pair(2,3,1,6,5));
     });
 });
 
