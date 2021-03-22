@@ -207,9 +207,15 @@ describe("Four of a kind", function() {
 });
 
 describe("Small straight", function() {
-    it("scores 15", function() {
+    it("scores 15 when ordered", function() {
         assert.equal(15, Yatzy.smallStraight(1,2,3,4,5));
+    });
+
+    it("scores 15 when unordered", function() {
         assert.equal(15, Yatzy.smallStraight(2,3,4,5,1));
+    });
+
+    it("scores 0", function() {
         assert.equal(0, Yatzy.smallStraight(1,2,2,4,5));
     });
 });
