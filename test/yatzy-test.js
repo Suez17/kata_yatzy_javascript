@@ -140,10 +140,21 @@ describe("One pair", function() {
     });
 });
 
-describe("Two pair", function() {
-    it("scores the sum of the two pairs", function() {
-        assert.equal(16, Yatzy.two_pair(3,3,5,4,5));
-        assert.equal(16, Yatzy.two_pair(3,3,5,5,5));
+describe("Two pairs", function() {
+    it("scores 16", function() {
+        assert.equal(16, Yatzy.twoPairs(3,3,5,4,5));
+    });
+
+    it("scores 16 when full house", function() {
+        assert.equal(16, Yatzy.twoPairs(3,3,5,5,5));
+    });
+
+    it("scores 0 when one pair", function() {
+        assert.equal(0, Yatzy.twoPairs(3,3,1,2,4));
+    });
+
+    it("scores 0 when no pair", function() {
+        assert.equal(0, Yatzy.twoPairs(1,2,3,4,5));
     });
 });
 
