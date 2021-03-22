@@ -221,9 +221,19 @@ describe("Small straight", function() {
 });
 
 describe("Large straight", function() {
-    it("scores 20", function() {
+    it("scores 20 when ordered", function() {
         assert.equal(20, Yatzy.largeStraight(6,2,3,4,5));
+    });
+
+    it("scores 20 when unordered", function() {
         assert.equal(20, Yatzy.largeStraight(2,3,4,5,6));
+    });
+
+    it("scores 0 when small straight", function() {
+        assert.equal(0, Yatzy.largeStraight(1,2,3,4,5));
+    });
+
+    it("scores 0", function() {
         assert.equal(0, Yatzy.largeStraight(1,2,2,4,5));
     });
 });
