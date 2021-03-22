@@ -200,6 +200,10 @@ describe("Four of a kind", function() {
     it("scores 0 when three of a kind", function() {
         assert.equal(0, Yatzy.fourOfAKind(3,3,3,4,5));
     });
+
+    it("scores 0 when pair", function() {
+        assert.equal(0, Yatzy.fourOfAKind(3,3,2,4,5));
+    });
 });
 
 describe("Small straight", function() {
