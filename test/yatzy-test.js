@@ -239,8 +239,31 @@ describe("Large straight", function() {
 });
 
 describe("Full house", function() {
-    it("scores the sum of the full house", function() {
-        assert.equal(18, Yatzy.fullHouse(6,2,2,2,6));
+    it("scores 18", function() {
+        assert.equal(18, Yatzy.fullHouse(6,2,2,2,6));    
+    });
+
+    it("scores 0", function() {
         assert.equal(0, Yatzy.fullHouse(2,3,4,5,6));
+    });
+
+    it("scores 0 when pair", function() {
+        assert.equal(0, Yatzy.fullHouse(2,2,3,5,6));
+    });
+
+    it("scores 0 when two pairs", function() {
+        assert.equal(0, Yatzy.fullHouse(2,2,4,4,6));
+    });
+
+    it("scores 0 when three of a kind", function() {
+        assert.equal(0, Yatzy.fullHouse(2,2,2,4,6));
+    });
+
+    it("scores 0 when four of a kind", function() {
+        assert.equal(0, Yatzy.fullHouse(2,2,2,2,6));
+    });
+
+    it("scores 0 when five of a kind", function() {
+        assert.equal(0, Yatzy.fullHouse(2,2,2,2,2));
     });
 });
